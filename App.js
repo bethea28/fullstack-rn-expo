@@ -9,7 +9,7 @@ enableScreens();
 function HomeScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>chris!</Text>
+      <Text>bryan!</Text>
     </View>
   );
 }
