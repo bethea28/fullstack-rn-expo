@@ -1,75 +1,51 @@
-import React from 'react';
-import { StatusBar, View } from 'react-native';
-import { AppLoading, ScreenOrientation } from 'expo';
-import { Appearance } from 'react-native-appearance';
-import { device, func, gStyle } from './src/constants';
+import * as React from 'react';
+import { Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// Before rendering any navigation stack
+import { enableScreens } from 'react-native-screens';
+enableScreens();
 
-// tab navigator
-import Stack from './src/navigation/Stack';
-
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isLoading: true,
-      theme: 'light'
-    };
-
-    // is iPad?
-    if (device.isPad) {
-      ScreenOrientation.allowAsync(
-        ScreenOrientation.Orientation.ALL_BUT_UPSIDE_DOWN
-      );
-    }
-
-    this.updateTheme = this.updateTheme.bind(this);
-  }
-
-  componentDidMount() {
-    // get system preference
-    const colorScheme = Appearance.getColorScheme();
-
-    // if light or dark
-    if (colorScheme !== 'no-preference') {
-      this.setState({
-        theme: colorScheme
-      });
-    }
-  }
-
-  updateTheme(themeType) {
-    this.setState({
-      theme: themeType
-    });
-  }
-
-  render() {
-    const { isLoading, theme } = this.state;
-    const iOSStatusType = theme === 'light' ? 'dark-content' : 'light-content';
-
-    if (isLoading) {
-      return (
-        <AppLoading
-          onFinish={() => this.setState({ isLoading: false })}
-          startAsync={func.loadAssetsAsync}
-        />
-      );
-    }
-
-    return (
-      <View style={gStyle.container[theme]}>
-        <StatusBar barStyle={device.iOS ? iOSStatusType : 'light-content'} />
-
-        <Stack
-          screenProps={{
-            updateTheme: this.updateTheme
-          }}
-          theme={theme}
-        />
-      </View>
-    );
-  }
+function HomeScreen() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>chris!</Text>
+    </View>
+  );
 }
 
-export default App;
+function SettingsScreen() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Settings!</Text>
+    </View>
+  );
+}
+
+function Test() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Test!</Text>
+    </View>
+  );
+}
+
+const Tab = createBottomTabNavigator();
+
+function MyTabs() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Settings" component={SettingsScreen} />
+      <Tab.Screen name="Test" component={Test} />
+    </Tab.Navigator>
+  );
+}
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <MyTabs />
+    </NavigationContainer>
+  );
+}
