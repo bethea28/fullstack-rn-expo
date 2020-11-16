@@ -1,0 +1,90 @@
+# Ignore vscode config
+.vscode/**
+!.vscode/settings.json
+
+# OSX
+#
+.DS_Store
+
+# Fastlane 
+ios/fastlane/report.xml
+android/fastlane/report.xml
+
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+project.xcworkspace
+ios/Pods
+ios/tmp.xcconfig
+
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+
+# node.js
+#
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# BUCK
+buck-out/
+\.buckd/
+!debug.keystore
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/
+
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+
+# vscode
+.vscode/.react
+
+# vim
+.swp
+
+# config
+src/config/local.json
+src/local.json
+.env
+
+# Haul
+haul-debug.log
+.happypack
+
+.jestCache/
+
+# Source bundles
+ios/index.ios.bundle*
+android/index.android.bundle*
+
+# CocoaPods
+/ios/Pods/
+
+# react-native-config codegen
+ios/tmp.xcconfig
