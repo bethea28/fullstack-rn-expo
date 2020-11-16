@@ -15,7 +15,7 @@ let Exercise = mongoose.model('Excercise', Schemas.ExcerciseSchema)
 
 // MyModel.find({ name: 'john', age: { $gte: 18 }});
 
-const getAllExercises = async (req, res) => {
+const getArtist = async (req, res) => {
   const final = await Person.find()
 
   console.log('final')
@@ -24,7 +24,7 @@ const getAllExercises = async (req, res) => {
   // res.send("GET bryan");
 }
 
-const createArtist = async (req, res) => {
+const postArtist = async (req, res) => {
   const newPerson = new Person({
     username: req.body.username,
   })
@@ -45,8 +45,8 @@ const createArtist = async (req, res) => {
 //   const finalExercise = await newExercise.save()
 //   res.status(201).json(finalExercise)
 // }
-artistRoutes.route('/get').get(getAllExercises)
-artistRoutes.route('/post').post(createArtist)
+artistRoutes.route('/get').get(getArtist)
+artistRoutes.route('/post').post(postArtist)
 // artistRoutes.route('/api/exercise/new-user').post(createArtist)
 // artistRoutes.route('/api/exercise/add').post(createExercise)
 

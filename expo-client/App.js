@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 // Before rendering any navigation stack
@@ -32,9 +32,20 @@ class HomeScreen extends React.Component {
 }
 
 function SettingsScreen() {
+  const postTest = async () => {
+    console.log('post test');
+    axios.post('http://localhost:3001/post', {
+      username: new Date().toString()
+    });
+  };
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
+      <TouchableOpacity
+        onPress={postTest}
+        style={{ width: 100, height: 50, backgroundColor: 'red' }}
+      >
+        <Text>Settings!</Text>
+      </TouchableOpacity>
     </View>
   );
 }
