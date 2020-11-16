@@ -9,13 +9,10 @@ require('dotenv').config()
 // Initalizes express server
 const app = express()
 //mongo setup
-mongoose.connect(
-  'mongodb+srv://bethea28:Javaninja1@cluster0-fbg69.mongodb.net/expo?retryWrites=true&w=majority',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-)
+mongoose.connect(process.env.mongo_uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
 const db = mongoose.connection
 db.on('error', (error) => console.log(error))
 db.once('open', () => console.log('connected to database'))

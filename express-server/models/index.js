@@ -3,7 +3,6 @@ const mongoose = require('mongoose')
 // let Schema = mongoose.Schema;
 
 const PersonSchema = new mongoose.Schema({
-  // name: { type: String, required: true },
   username: String,
   //   age: Number,
   //   favoriteFoods: [String]
