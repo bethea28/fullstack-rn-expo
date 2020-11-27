@@ -3,9 +3,8 @@ import {
   TouchableOpacity,
   StyleSheet,
   Text,
-  SafeAreaView,
-  ScrollView,
   View,
+  ScrollView,
   FlatList,
   Image
 } from 'react-native';
@@ -129,7 +128,7 @@ const Test = () => {
         justifyContent: 'center'
       }}
     >
-      <SafeAreaView
+      <View
         style={{
           display: 'flex',
           // justifyContent: 'center',
@@ -156,7 +155,7 @@ const Test = () => {
             </View>
           }
         />
-      </SafeAreaView>
+      </View>
     </View>
   );
 };
