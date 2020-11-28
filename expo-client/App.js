@@ -14,7 +14,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import axios from 'axios';
 import { enableScreens } from 'react-native-screens';
 import FlatListComponent from './flatlist';
-enableScreens();
 
 class HomeScreen extends React.Component {
   state = {
