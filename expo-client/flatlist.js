@@ -41,9 +41,9 @@ const numColumns = 3;
 const formatData = (data, numColumns) => {
   const numberOfFullRows = Math.floor(data.length / numColumns);
 
-  console.log('fullrow', numberOfFullRows);
+  // console.log('fullrow', numberOfFullRows);
   let numberOfElementsLastRow = data.length - numberOfFullRows * numColumns;
-  console.log('lastrow', numberOfElementsLastRow);
+  // console.log('lastrow', numberOfElementsLastRow);
   while (
     numberOfElementsLastRow !== numColumns &&
     numberOfElementsLastRow !== 0
@@ -61,7 +61,6 @@ const formatData = (data, numColumns) => {
 
 export default class FlatListComponent extends React.Component {
   renderItem = ({ item, index }) => {
-    console.log('items', index);
     if (item.empty === true) {
       return <View style={[styles.item, styles.itemInvisible]} />;
     }
