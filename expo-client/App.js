@@ -64,65 +64,6 @@ function SettingsScreen() {
   );
 }
 
-// const Flatlist = () => {
-//   let data = [
-//     { name: 'bryan', likes: 50 },
-//     { name: 'bryan', likes: 60 },
-//     { name: 'bryan', likes: 12 },
-//     { name: 'bryan', likes: 5 },
-//     { name: 'bryan', likes: 15 },
-//     { name: 'bryan', likes: 22 },
-//     { name: 'bryan', likes: 75 },
-//     { name: 'bryan', likes: 3 },
-//     { name: 'bryan', likes: 33 },
-//     { name: 'bryan', likes: 19 },
-//     { name: 'bryan', likes: 81 },
-//     { name: 'bryan', likes: 62 },
-//     { name: 'bryan', likes: 45 },
-//     { name: 'bryan', likes: 1 },
-//     { name: 'bryan', likes: 17 }
-//   ];
-//   let sortedData = data.sort((a, b) => {
-//     return a.likes - b.likes;
-//   });
-//   const DATA = sortedData;
-//   const renderItem = ({ item }) => (
-//     <View>
-//       <Text style={{ width: 75, height: 75, borderWidth: 2 }}>
-//         {item.likes}
-//       </Text>
-//     </View>
-//   );
-
-//   return (
-//     <View
-//       style={{
-//         display: 'flex',
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//         borderWidth: 2,
-//         flex: 1,
-//         backgroundColor: 'orange'
-//       }}
-//     >
-//       <View style={{ height: 200 }}>
-//         <FlatList
-//           numColumns={3}
-//           contentContainerStyle={{
-//             flexDirection: 'row',
-//             // flexWrap: 'wrap',
-//             width: 250,
-//             borderWidth: 2
-//           }}
-//           data={DATA}
-//           renderItem={renderItem}
-//           keyExtractor={item => item.likes}
-//         />
-//       </View>
-//     </View>
-//   );
-// };
-
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
